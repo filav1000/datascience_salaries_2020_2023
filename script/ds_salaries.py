@@ -27,3 +27,13 @@ print(df_by_comp_size)
 df_by_comp_size.unstack().plot(kind='bar')
 plt.legend()
 plt.show()
+
+# load the shapefile with countries
+gdf = gpd.read_file('/home/user/filav/PyQGIS work/world-administrative-boundaries.shp')
+print(gdf.head())
+
+df_countries = df.groupby('company_location')['salary_in_usd'].mean()
+print(df_countries.head())
+df_countries_reset = df_countries.to_frame()
+print(df_countries_reset.reset_index(inplace=True))
+print(df_countries_reset.head())
