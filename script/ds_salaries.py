@@ -19,3 +19,11 @@ plt.xlabel('Experience Level')
 plt.ylabel('Salary in USD')
 plt.title('Salary stats based on experience level')
 plt.show()
+
+# 2 bar plot by year and size vs mean salary
+df_by_comp_size = df.groupby(['work_year', 'company_size'])['salary_in_usd'].mean()
+print(df_by_comp_size)
+
+df_by_comp_size.unstack().plot(kind='bar')
+plt.legend()
+plt.show()
