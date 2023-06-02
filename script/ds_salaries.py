@@ -32,8 +32,9 @@ plt.show()
 gdf = gpd.read_file('/home/user/filav/PyQGIS work/world-administrative-boundaries.shp')
 print(gdf.head())
 
+# find the mean salary for each location
 df_countries = df.groupby('company_location')['salary_in_usd'].mean()
-print(df_countries.head())
+
 df_countries_reset = df_countries.to_frame()
 print(df_countries_reset.reset_index(inplace=True))
 print(df_countries_reset.head())
