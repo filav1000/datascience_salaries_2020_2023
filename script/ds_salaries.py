@@ -11,7 +11,7 @@ print('Max salary USD = {}'.format(round(df['salary_in_usd'].max())))
 print('Min salary USD = {}'.format(round(df['salary_in_usd'].min())))
 print('Mean salary USD = {}'.format(round(df['salary_in_usd'].mean())))
 
-# visuals
+# visuals with seaborn and matplotlib
 # 1 boxplot Experience level vs Salary (stats)
 sns.set(font_scale=1.5)
 sns.boxplot(data=df, x='experience_level', y='salary_in_usd', order=['EN', 'MI', 'SE', 'EX'])
